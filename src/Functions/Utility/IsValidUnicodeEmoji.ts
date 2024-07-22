@@ -1,14 +1,10 @@
 /**
  * Checks if a string is an unicode emoji
  * @param {string} emoji - The string to check if it's an emoji
- *
- * @example
- * ```ts
- * if (!IsValidUnicodeEmoji("🤷‍♂️")) return;
- * ```
+ * @returns {boolean} True if the string is an emoji, false otherwise
  */
 export function IsValidUnicodeEmoji(emoji: string): boolean {
-  const regex = /\p{Extended_Pictographic}/gu;
+	const regex = /\p{Extended_Pictographic}/gu;
 
-  return regex.test(emoji);
+	return regex.test(emoji);
 }

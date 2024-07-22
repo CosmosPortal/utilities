@@ -1,0 +1,12 @@
+/dist
+/ignore
+/node_modules
+/note
+
+.env
+.DS_Store
+.gitignore
+.npmignore
+
+LICENSE
+README.md

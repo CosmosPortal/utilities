@@ -1,8 +1,10 @@
 /src
 /node_modules
 
-.env
 .DS_Store
+.env
+.prettierignore
+.prettierrc.json
 
 tsconfig.json
 tsup.config.ts
