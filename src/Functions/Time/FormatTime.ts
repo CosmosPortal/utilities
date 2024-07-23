@@ -3,6 +3,7 @@
  * @param {number} seconds - The time in seconds
  * @param {string} separator - The separator to join the values
  * @returns {string} The formatted time
+ * @deprecated Will be removed in a later version
  */
 export function FormatTime(seconds: number, separator: string = ","): string {
 	if (seconds === 0) return "0 Seconds";
