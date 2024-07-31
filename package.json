@@ -1,42 +1,42 @@
 {
-  "name": "@cosmosportal/utilities",
-  "description": "A utility package featuring essential classes & functions to simplify the development of your Discord application.",
-  "version": "0.1.0",
-  "author": "Cosmos Portal",
-  "license": "MIT",
-  "keywords": [
-    "discord.js",
-    "discord",
-    "discord application",
-    "discord bot",
-    "utility",
-    "cosmos portal",
-    "utilities"
-  ],
-  "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "scripts": {
-    "build": "tsup",
-    "prettier": "prettier --write \"./src/**/*.{js,ts,md,json}\"",
-    "prettier:check": "prettier --check \"./src/**/*.{js,ts,md,json}\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CosmosPortal/utilities.git"
-  },
-  "bugs": {
-    "url": "https://github.com/CosmosPortal/utilities/issues"
-  },
-  "homepage": "https://github.com/CosmosPortal/utilities#readme",
-  "devDependencies": {
-    "@swc/core": "^1.6.13",
-    "prettier": "^3.3.3",
-    "tsup": "^8.1.1",
-    "typescript": "^5.5.3"
-  },
-  "dependencies": {
-    "discord.js": "^14.15.3"
-  }
+	"name": "@cosmosportal/utilities",
+	"description": "A utility package featuring essential classes & functions to simplify the development of your Discord application.",
+	"version": "0.2.0",
+	"author": "Cosmos Portal",
+	"license": "MIT",
+	"keywords": [
+		"discord.js",
+		"discord",
+		"discord application",
+		"discord bot",
+		"utility",
+		"cosmos portal",
+		"utilities"
+	],
+	"type": "module",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"scripts": {
+		"build": "tsup",
+		"prettier": "prettier --write \"./src/**/*.{js,ts,md,json}\"",
+		"prettier:check": "prettier --check \"./src/**/*.{js,ts,md,json}\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/CosmosPortal/utilities.git"
+	},
+	"bugs": {
+		"url": "https://github.com/CosmosPortal/utilities/issues"
+	},
+	"homepage": "https://github.com/CosmosPortal/utilities#readme",
+	"devDependencies": {
+		"@swc/core": "^1.7.3",
+		"prettier": "^3.3.3",
+		"tsup": "^8.2.3",
+		"typescript": "^5.5.4"
+	},
+	"dependencies": {
+		"discord.js": "^14.15.3"
+	}
 }
