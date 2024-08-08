@@ -1,6 +1,7 @@
 /**
  * Converts a text to title case
  * @param {string} text - The text to convert to title case
+ * @param {string} separator - The separator to split
  * @returns {string} The converted string
  */
 export function ToTitleCase(text: string, separator: string = " "): string {

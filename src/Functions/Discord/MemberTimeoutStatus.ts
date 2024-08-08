@@ -6,6 +6,7 @@ import type { Snowflake } from "../../Types";
  * @param {Guild} guild - The guild class to check the timeout status of the member
  * @param {Snowflake} member_id - The ID of the member to check
  * @returns {Promise<boolean | undefined>} True if member is timed out, false otherwise
+ * @deprecated Will be removed in a later version. Please use GuildMember#isCommunicationDisabled() in Discord.js
  */
 export async function MemberTimeoutStatus(guild: Guild, member_id: Snowflake): Promise<boolean | undefined> {
 	const member = await guild.members.fetch(member_id).catch((error) => {

@@ -12,13 +12,13 @@ export interface BaseSelectMenu extends BaseComponent {
 	 *
 	 * @default 1
 	 */
-	max_values?: number;
+	maxValues?: number;
 	/**
 	 * Minimum number of items that must be chosen, min 0, max 25
 	 *
 	 * @default 1
 	 */
-	min_values?: number;
+	minValues?: number;
 	/**
 	 * Placeholder text if nothing is selected, max 150 characters
 	 */

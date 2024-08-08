@@ -1,4 +1,5 @@
 import { ComponentType, type APIActionRowComponent, type APIModalInteractionResponseCallbackData, type APITextInputComponent } from "discord.js";
+import { ArrayShuffle } from "../../../Functions";
 import type { Modal, TextInput } from "../../../Interfaces";
 
 export class ModalBuilder {
@@ -6,31 +7,31 @@ export class ModalBuilder {
 	private readonly _custom_id: string;
 	private readonly _data: APIActionRowComponent<APITextInputComponent>[];
 
-	constructor(data: Modal) {
-		this._title = data.title;
-		this._custom_id = data.custom_id;
+	constructor(structure: Modal) {
+		this._title = structure.title;
+		this._custom_id = structure.customId;
 		this._data = [];
 	}
 
 	/**
 	 * Creates the Text Input component for the Modal
-	 * @param {TextInput} component_data - The structure of data needed to create the Text Input component
+	 * @param {TextInput} structure - The structure of data needed to create the Text Input component
 	 * @returns {this} A Text Input component
 	 */
-	public CreateTextInput(component_data: TextInput): this {
+	public CreateTextInput(structure: TextInput): this {
 		const data: APIActionRowComponent<APITextInputComponent> = {
 			type: ComponentType.ActionRow,
 			components: [
 				{
 					type: ComponentType.TextInput,
-					custom_id: component_data.custom_id,
-					label: component_data.label,
-					style: component_data.style,
-					max_length: component_data.max_length,
-					min_length: component_data.min_length,
-					placeholder: component_data.placeholder,
-					required: component_data.required,
-					value: component_data.value
+					custom_id: structure.customId,
+					label: structure.label,
+					style: structure.style,
+					max_length: structure.maxLength,
+					min_length: structure.minLength,
+					placeholder: structure.placeholder,
+					required: structure.required,
+					value: structure.value
 				}
 			]
 		};
@@ -42,13 +43,14 @@ export class ModalBuilder {
 
 	/**
 	 * Builds the Modal response containing the Text Input components
+	 * @param {boolean} shuffleTextInputs - Shuffles the text inputs
 	 * @returns {APIModalInteractionResponseCallbackData} The Modal response containing the Text Input components
 	 */
-	public BuildResponse(): APIModalInteractionResponseCallbackData {
+	public BuildResponse(shuffleTextInputs?: boolean): APIModalInteractionResponseCallbackData {
 		const data: APIModalInteractionResponseCallbackData = {
 			title: this._title,
 			custom_id: this._custom_id,
-			components: this._data
+			components: !shuffleTextInputs ? this._data : ArrayShuffle(this._data)
 		};
 
 		return data;

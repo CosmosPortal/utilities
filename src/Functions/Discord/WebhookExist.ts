@@ -3,14 +3,12 @@ import type { Client } from "discord.js";
 /**
  * Checks if a webhook exists
  * @param {Client<true>} client - Your client class to check for the webhook
- * @param {string} webhook_id - The ID of the webhook to check
- * @param {string} webhook_token - The token of the webhook to check
+ * @param {string} webhookId - The ID of the webhook to check
+ * @param {string} webhookToken - The token of the webhook to check
  * @returns {Promise<undefined>} True if webhook exist, false otherwise
  */
-export async function WebhookExist(client: Client<true>, webhook_id: string, webhook_token: string): Promise<boolean> {
-	const webhook = await client.fetchWebhook(webhook_id, webhook_token).catch((error) => {
-		return undefined;
-	});
+export async function WebhookExist(client: Client<true>, webhookId: string, webhookToken: string): Promise<boolean> {
+	const webhook = await client.fetchWebhook(webhookId, webhookToken).catch(() => undefined);
 
 	return !!webhook;
 }

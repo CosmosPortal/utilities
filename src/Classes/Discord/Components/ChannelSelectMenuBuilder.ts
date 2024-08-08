@@ -7,17 +7,17 @@ import type { ChannelSelectMenu } from "../../../Interfaces";
 export class ChannelSelectMenuBuilder {
 	private readonly _data: APIChannelSelectComponent[];
 
-	constructor(data: ChannelSelectMenu) {
+	constructor(structure: ChannelSelectMenu) {
 		this._data = [
 			{
 				type: ComponentType.ChannelSelect,
-				custom_id: data.custom_id,
-				channel_types: data.channel_types,
-				default_values: data.default_values,
-				disabled: data.disabled,
-				max_values: data.max_values,
-				min_values: data.min_values,
-				placeholder: data.placeholder
+				custom_id: structure.customId,
+				channel_types: structure.channelTypes,
+				default_values: structure.defaultValues,
+				disabled: structure.disabled,
+				max_values: structure.maxValues,
+				min_values: structure.minValues,
+				placeholder: structure.placeholder
 			}
 		];
 	}

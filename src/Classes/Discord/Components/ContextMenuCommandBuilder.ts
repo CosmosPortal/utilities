@@ -7,14 +7,14 @@ import type { ContextMenuCommand } from "../../../Interfaces";
 export class ContextMenuCommandBuilder {
 	private readonly _data: RESTPostAPIContextMenuApplicationCommandsJSONBody;
 
-	public constructor(data: ContextMenuCommand) {
+	public constructor(structure: ContextMenuCommand) {
 		this._data = {
-			type: data.type,
-			name: data.name,
-			name_localizations: data.name_localizations,
-			default_member_permissions: data.default_member_permissions,
-			dm_permission: data.dm_permission,
-			nsfw: data.nsfw
+			type: structure.type,
+			name: structure.name,
+			name_localizations: structure.nameLocalizations,
+			default_member_permissions: structure.defaultMemberPermissions,
+			dm_permission: structure.dmPermission,
+			nsfw: structure.nsfw
 		};
 	}
 

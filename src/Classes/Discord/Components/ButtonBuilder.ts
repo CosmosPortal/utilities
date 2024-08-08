@@ -1,4 +1,5 @@
 import { ButtonStyle, ComponentType, type APIActionRowComponent, type APIButtonComponent, type APIButtonComponentWithCustomId, type APIButtonComponentWithURL, type APIMessageActionRowComponent, type APIMessageComponent } from "discord.js";
+import { ArrayShuffle } from "../../../Functions";
 import type { LinkButton, RegularButton } from "../../../Interfaces";
 
 /**
@@ -13,17 +14,17 @@ export class ButtonBuilder {
 
 	/**
 	 * Creates a Link Button component
-	 * @param {LinkButton} component_data - The structure of data needed to create the Link Button component
+	 * @param {LinkButton} structure - The structure of data needed to create the Link Button component
 	 * @returns {this} A link button component
 	 */
-	public CreateLinkButton(component_data: LinkButton): this {
+	public CreateLinkButton(structure: LinkButton): this {
 		const data: APIButtonComponentWithURL = {
 			type: ComponentType.Button,
 			style: ButtonStyle.Link,
-			url: component_data.custom_id,
-			disabled: component_data.disabled,
-			emoji: component_data.emoji,
-			label: component_data.label
+			url: structure.customId,
+			disabled: structure.disabled,
+			emoji: structure.emoji,
+			label: structure.label
 		};
 
 		this._data.push(data);
@@ -33,17 +34,17 @@ export class ButtonBuilder {
 
 	/**
 	 * Creates a Regular Button component
-	 * @param {RegularButton} component_data - The structure of data needed to create the Regular Button component
+	 * @param {RegularButton} structure - The structure of data needed to create the Regular Button component
 	 * @returns {this} A regular button component
 	 */
-	public CreateRegularButton(component_data: RegularButton): this {
+	public CreateRegularButton(structure: RegularButton): this {
 		const data: APIButtonComponentWithCustomId = {
 			type: ComponentType.Button,
-			custom_id: component_data.custom_id,
-			style: component_data.style,
-			disabled: component_data.disabled,
-			emoji: component_data.emoji,
-			label: component_data.label
+			custom_id: structure.customId,
+			style: structure.style,
+			disabled: structure.disabled,
+			emoji: structure.emoji,
+			label: structure.label
 		};
 
 		this._data.push(data);
@@ -53,12 +54,13 @@ export class ButtonBuilder {
 
 	/**
 	 * Builds the action row containing the Link, Premium, and/or Regular Button components
+	 * @param {boolean} shuffleButtons - Shuffles the buttons
 	 * @returns {APIActionRowComponent<APIMessageActionRowComponent>} The action row containing the Link, Premium, and/or Regular Button components
 	 */
-	public BuildActionRow(): APIActionRowComponent<APIMessageActionRowComponent> {
+	public BuildActionRow(shuffleButtons?: boolean): APIActionRowComponent<APIMessageActionRowComponent> {
 		const data: APIMessageComponent = {
 			type: ComponentType.ActionRow,
-			components: this._data
+			components: !shuffleButtons ? this._data : ArrayShuffle(this._data)
 		};
 
 		return data;

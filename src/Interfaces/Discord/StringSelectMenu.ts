@@ -7,5 +7,5 @@ export interface StringSelectMenu extends BaseSelectMenu {
 	 *
 	 * @note Only required and available for string select menu.
 	 */
-	select_options: APISelectMenuOption[];
+	selectOptions: APISelectMenuOption[];
 }

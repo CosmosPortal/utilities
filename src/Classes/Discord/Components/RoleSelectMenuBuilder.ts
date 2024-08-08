@@ -4,16 +4,16 @@ import type { RoleSelectMenu } from "../../../Interfaces";
 export class RoleSelectMenuBuilder {
 	private readonly _data: APIRoleSelectComponent[];
 
-	constructor(data: RoleSelectMenu) {
+	constructor(structure: RoleSelectMenu) {
 		this._data = [
 			{
 				type: ComponentType.RoleSelect,
-				custom_id: data.custom_id,
-				default_values: data.default_values,
-				disabled: data.disabled,
-				max_values: data.max_values,
-				min_values: data.min_values,
-				placeholder: data.placeholder
+				custom_id: structure.customId,
+				default_values: structure.defaultValues,
+				disabled: structure.disabled,
+				max_values: structure.maxValues,
+				min_values: structure.minValues,
+				placeholder: structure.placeholder
 			}
 		];
 	}

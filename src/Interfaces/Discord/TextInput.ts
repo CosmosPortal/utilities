@@ -13,11 +13,11 @@ export interface TextInput extends BaseComponent {
 	/**
 	 * Maximum input length for a text input, min 1, max 4000
 	 */
-	max_length?: number;
+	maxLength?: number;
 	/**
 	 * Minimum input lenght for a text input, min 0, max 4000
 	 */
-	min_length?: number;
+	minLength?: number;
 	/**
 	 * Custom placeholder text if the input is empty, max 100 characters
 	 */

@@ -5,7 +5,7 @@ export interface UserSelectMenu extends BaseSelectMenu {
 	/**
 	 * List of default values for auto-populated select menu
 	 *
-	 * @note Must be in the range defined in `min_values` and `max_values`.
+	 * @note Must be in the range defined in `minValues` and `maxValues`.
 	 */
-	default_values?: UserDefaultValue[];
+	defaultValues?: UserDefaultValue[];
 }

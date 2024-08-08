@@ -4,16 +4,16 @@ import type { UserSelectMenu } from "../../../Interfaces";
 export class UserSelectMenuBuilder {
 	private readonly _data: APIUserSelectComponent[];
 
-	constructor(data: UserSelectMenu) {
+	constructor(structure: UserSelectMenu) {
 		this._data = [
 			{
 				type: ComponentType.UserSelect,
-				custom_id: data.custom_id,
-				default_values: data.default_values,
-				disabled: data.disabled,
-				max_values: data.max_values,
-				min_values: data.min_values,
-				placeholder: data.placeholder
+				custom_id: structure.customId,
+				default_values: structure.defaultValues,
+				disabled: structure.disabled,
+				max_values: structure.maxValues,
+				min_values: structure.minValues,
+				placeholder: structure.placeholder
 			}
 		];
 	}

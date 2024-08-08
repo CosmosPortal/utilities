@@ -7,16 +7,16 @@ import type { ChatInputCommand } from "../../../Interfaces";
 export class ChatInputCommandBuilder {
 	private readonly _data: RESTPostAPIChatInputApplicationCommandsJSONBody;
 
-	public constructor(data: ChatInputCommand) {
+	public constructor(structure: ChatInputCommand) {
 		this._data = {
-			name: data.name,
-			name_localizations: data.name_localizations,
-			description: data.description,
-			description_localizations: data.description_localizations,
-			options: data.options,
-			default_member_permissions: data.default_member_permissions,
-			dm_permission: data.dm_permission,
-			nsfw: data.nsfw
+			name: structure.name,
+			name_localizations: structure.nameLocalizations,
+			description: structure.description,
+			description_localizations: structure.descriptionLocalizations,
+			options: structure.options,
+			default_member_permissions: structure.defaultMemberPermissions,
+			dm_permission: structure.dmPermission,
+			nsfw: structure.nsfw
 		};
 	}
 
